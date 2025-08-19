@@ -26,7 +26,7 @@ jobs:
     - name: Environment Printer
       uses: managedkaos/print-env@v1.0
 
-    - uses: ui86/go-release-action@v1
+    - uses: ui86/go-release-action@v1.0.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         goos: ${{ matrix.goos }}
@@ -37,7 +37,7 @@ jobs:
         md5sum: false
         ldflags: -X "github.com/ui86/assets-uploader/util/appversion.appVersion=${{ env.APP_VERSION }}" -X "github.com/ui86/assets-uploader/util/appversion.buildTime=${{ env.BUILD_TIME }}" -X github.com/ui86/assets-uploader/util/appversion.gitCommit=${{ github.sha }} -X main.gitRef=${{ github.ref }}
 
-    - uses: ui86/go-release-action@v1
+    - uses: ui86/go-release-action@v1.0.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         goos: ${{ matrix.goos }}
